@@ -14,8 +14,8 @@ This web project will help people to make virtual friends and express his emotio
 </ul>
 
 # Youtube Link of how our app works:
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=QxUmVyqKBt8) 
-Tour Management App <b>[ [watch now](https://www.youtube.com/watch?v=QxUmVyqKBt8) ] </b>
+</b>[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=QxUmVyqKBt8) </b>
+ Social Network Website <b>[ [watch now](https://www.youtube.com/watch?v=QxUmVyqKBt8) ] </b>
 
 
 ## Used Technologies:
