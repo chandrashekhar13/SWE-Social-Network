@@ -14,7 +14,7 @@ This web project will help people to make virtual friends and express his emotio
 </ul>
 
 # Youtube Link of how our app works:
-Tour Management App <b>[ [watch now](https://youtu.be/0uX4cQpkpTg) ] </b>
+Tour Management App <b>[ [watch now](https://www.youtube.com/watch?v=QxUmVyqKBt8) ] </b>
 
 
 ## Used Technologies:
@@ -30,6 +30,12 @@ git clone https://github.com/chandrashekhar13/SWE-Social-Network.git
 ```
 
 ## Run the Project in your Machine
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 
 Change directory to both api & client:
 ```
@@ -53,6 +59,26 @@ $ npm start
 
 <p  align="center"  >
 <img  src="ScreesShots/Screenshot from 2021-12-14 18-12-33.png"  height = "400"/> </p>
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-12-42.png"  height = "400"/> </p>
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-13-02.png"  height = "400"/> </p>
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-13-09.png"  height = "400"/> </p>
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-13-19.png "  height = "400"/> </p>
+
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-13-44.png "  height = "400"/> </p>
+
+
+<p  align="center"  >
+<img  src="ScreesShots/Screenshot from 2021-12-14 18-13-51.png "  height = "400"/> </p>
 
 
 
