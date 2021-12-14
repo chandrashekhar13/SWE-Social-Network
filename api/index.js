@@ -1,42 +1,64 @@
-const express =  require("express");
-const app = express(); 
+const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
-const morgan = require('morgan');
+const morgan = require("morgan");
+const multer = require("multer");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const queryRoute = require("./routes/query")
+const router = express.Router();
+const path = require("path");
+
+const cors = require("cors");
+// const router = require('./routes/router')
+
+app.use(cors())
 
 dotenv.config();
 
+mongoose.connect(
+  process.env.MONGO_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("Connected to MongoDB");
+  }
+);
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
-
-//midleware
-
+//middleware
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*")
+// }) 
 
-app.use("/api/users", userRoute);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
+});
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  try {
+    return res.status(200).json("File uploded successfully");
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.use("/api/auth", authRoute);
-app.use("/api/posts",postRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/query", queryRoute);
 
-app.get("/",(req,res) => {
-    res.send("Welcome to homepage")
-})
-
-const port = process.env.PORT || 8000
-const start = async()=>{
-    try {
-        await mongoose.connect(process.env.MONGO_URL,
-            console.log("Conntected to MongoDB"),{})
-            app.listen(port,console.log(`server listening to port ${port}`))
-    }catch (error) {
-        console.log(error)
-    }
-}
-start();
-// app.listen(8800,() =>{
-//     console.log("Backend sever is running")
-// })
+app.listen(8800, () => {
+  console.log("Backend server is running!");
+});
